@@ -25,15 +25,17 @@
       }
 
       h2 {
-        margin-bottom: 10%;
-        font-size: 70px;
-        font-family: 'Shrikhand', cursive;
-        text-align: center;
-        line-height: 100%;
-        background: -webkit-linear-gradient(#232526, #414345);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+          margin-bottom: 10%;
+          font-size: 70px;
+          font-family: 'Shrikhand', cursive;
+          text-align: center;
+          line-height: 100%;
+          background: -webkit-linear-gradient(#232526, #414345);
+          background: -o-linear-gradient(#232526, #414345);
+          background: linear-gradient(#232526, #414345);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
 
       .description {
         margin-bottom: 15%;
@@ -43,11 +45,20 @@
       }
 
       .number {
-        padding: 21px 10px;
+        display: none;
         text-align: center;
         font-size: 50px;
         font-family: 'Anonymous Pro', san-serif;
         color: white;
+      }
+
+      .numberShow {
+        display: block;
+      }
+
+      #info {
+        padding: 21px 10px;
+        height: 100px;
         border: 1px solid black;
         background: -webkit-radial-gradient(#8E0E00, #1F1C18);
         background: -o-radial-gradient(#8E0E00, #1F1C18);
@@ -83,16 +94,22 @@
       <div id="info"></div>
 
       <form class="refreshWrapper">
-        <input type="button" class="refresh" onClick="history.go(0)" value="SPIN">
+        <input type="button" class="refresh" id="refresh" value="SPIN">
       </form>
     </div>
 
   </body>
-  <script type="text/javascript">
-    var randomNum = Math.floor((Math.random() * 10) + 1);
-    var el = document.getElementById('info');
-    el.innerHTML = '<p class="number">' + randomNum + '</p>'
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 
-    console.dir ('h2');
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var randomNum = Math.floor((Math.random() * 10) + 1);
+      var el = document.getElementById('info');
+      el.innerHTML = '<p id="number" class="number">' + randomNum + '</p>'
+
+      $('#refresh').click(function(){
+        $('#number').addClass('numberShow');
+      });
+    });
   </script>
 </html>
