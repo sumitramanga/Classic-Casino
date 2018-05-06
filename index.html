@@ -65,7 +65,7 @@
         background: radial-gradient(#8E0E00, #1F1C18);
       }
 
-      .refresh{
+      .revealBtn{
         padding: 10px 34px;
         font-family: 'Anton', sans-serif;
         text-align: center;
@@ -76,9 +76,14 @@
         border: 2px solid #6e0dd0;
         box-shadow: 0px 0px 10px #142585;
         background: -webkit-linear-gradient(#6441A5, #2a0845);
-
       }
-      .refreshWrapper {
+      .revealBtn:hover {
+        cursor: pointer;
+      }
+      .revealBtn:focus {
+        outline:0;
+      }
+      .btnWrapper {
         margin-top: 19%;
         text-align: center;
       }
@@ -93,8 +98,8 @@
 
       <div id="info"></div>
 
-      <form class="refreshWrapper">
-        <input type="button" class="refresh" id="refresh" value="SPIN">
+      <form class="btnWrapper">
+        <input type="button" class="revealBtn" id="reveal" value="SPIN">
       </form>
     </div>
 
@@ -107,7 +112,7 @@
       var el = document.getElementById('info');
       el.innerHTML = '<p id="number" class="number">' + randomNum + '</p>'
 
-      $('#refresh').click(function(){
+      $('#reveal').click(function(){
         $('#number').addClass('numberShow');
       });
     });
