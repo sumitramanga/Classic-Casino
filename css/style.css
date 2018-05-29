@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   background-color: #BA8B02;
 }
 
@@ -13,7 +13,7 @@ body {
   margin: 17% auto;
 }
 
-h2 {
+.h2 {
   margin-bottom: 30px;
   font-size: 70px;
   font-family: 'Shrikhand', cursive;
@@ -66,12 +66,18 @@ h2 {
   box-shadow: 0px 0px 10px #142585;
   background: -webkit-linear-gradient(#6441A5, #2a0845);
 }
+
 .revealBtn:hover {
   cursor: pointer;
 }
 
 .revealBtn:focus {
   outline:0;
+}
+
+.revealBtn:active {
+  background: linear-gradient(#8657DE, #4F0F82);
+  transform: translateY(3px);
 }
 
 .btnWrapper {
